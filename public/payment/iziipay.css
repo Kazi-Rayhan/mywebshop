@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/* Button styling */
+.iziipay__payment-btn {
+    font-family: "Lato", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: #4335A7 1px solid;
+    border-radius: 5px;
+    background-color: #4335A7;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #FFF6E9;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 700;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+.iziipay__payment-btn:hover {
+    box-shadow: 4px 4px 1px #ff7e3eab;
+}
+.iziipay__payment-btn svg {
+    transition: .2s ease-in;
+    height: 30px;
+}
+/* Modal styling */
+.iziipay__payment-modal {
+    text-align: left !important;
+    font-family: "Lato", serif;
+    display: none;
+    position: fixed;
+    width: 40%;
+    object-fit: contain;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 20px;
+    background: #FFF;
+    box-shadow: 5px 5px #4335A7;
+
+    z-index: 1000;
+}
+.iziipay__payment-modal::-webkit-scrollbar {
+    display: none;
+}
+.iziipay__payment-modal {
+    -ms-overflow-style: none;
+
+    scrollbar-width: none;
+
+}
+.iziipay__payment-modal.active {
+    display: block;
+}
+.iziipay__payment-modal__header {
+    font-size: 25px;
+
+    font-family: "Lato", serif;
+    letter-spacing: 2px;
+    border-bottom: 1px solid black;
+    padding-bottom: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.iziipay__payment-modal__body {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+.iziipay__payment-modal__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+.iziipay__close-btn,
+.iziipay__confirm-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.iziipay__close-btn {
+    background: #ddd;
+}
+.iziipay__confirm-btn {
+    background-color: #4335A7;
+    border-radius: 0px;
+    color: #FFF;
+    padding: 10px 20px;
+
+}
+/* Overlay */
+.iziipay__overlay {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+}
+.iziipay__overlay.active {
+    display: block;
+}
+.iziipay__input-group label+input,
+.iziipay__input-group label+select {
+    display: block;
+    margin-bottom: 20px;
+}
+.iziipay__input-group {
+    width: 100%
+}
+.iziipay__input-group input,
+.iziipay__input-group select {
+    background: #FFF;
+    border: none;
+    width: 100%;
+    padding: 10px 5px;
+    border-bottom: 1px solid #0000005a;
+    transition: .2s ease-in;
+}
+.iziipay__input-group input:focus,
+.iziipay__input-group select:focus {
+    outline: none;
+    border-color: #4335A7;
+    box-shadow: 0px 9px 10px #4235a732;
+}
+
+@media (max-width: 768px) {
+    .iziipay__payment-btn {
+        font-size: 12px;
+        padding: 8px 15px;
+        gap: 10px;
+        letter-spacing: 2px;
+    }
+    .iziipay__payment-btn svg {
+        height: 25px;
+    }
+    .iziipay__payment-modal {
+        width: 90%;
+        padding: 15px;
+    }
+    .iziipay__payment-modal__header {
+        font-size: 20px;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    .iziipay__payment-modal__body {
+        max-height: 60vh;
+    }
+    .iziipay__payment-modal__footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .iziipay__close-btn,
+    .iziipay__confirm-btn {
+        width: 100%;
+    }
+    .iziipay__input-group label+input,
+    .iziipay__input-group label+select {
+        margin-bottom: 15px;
+    }
+    .iziipay__input-group input,
+    .iziipay__input-group select {
+        padding: 8px;
+    }
+}

@@ -1,0 +1,4 @@
+<h4 style="font-size: 16px; color: #787771; line-height: 1.2; padding:0;margin:4;">{{ __('words.company') }}: <span style="font-size: 14px;font-weight:300;margin-left:5px">{{ $order->shop->company_registration }}</span></h4>
+<h4 style="font-size: 16px; color: #787771; line-height: 1.2; padding:0;margin:4;">{{ __('words.invoice_tax') }} : <span style="font-size: 14px;font-weight:300;margin-left:5px">{{ $order->shop->street }}</span></h4>
+<h4 style="font-size: 16px; color: #787771; line-height: 1.2; padding:0;margin:4;">{{ __('words.invoice_address') }} : <span style="font-size: 14px;font-weight:300;margin-left:5px"> {{ $order->shop->street }}</span></h4>
+<h4 style="font-size: 16px; color: #787771; line-height: 1.2; padding:0;margin:4;">{{ __('words.invoice_place') }} :<span style="font-size: 14px;font-weight:300;margin-left:5px"> {{ $order->shop->post_code }} {{ $order->shop->city }}</span></h4>

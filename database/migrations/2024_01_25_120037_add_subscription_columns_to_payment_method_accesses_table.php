@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('payment_method_accesses', function (Blueprint $table) {
+            $table->string('shopperId')->nullable();
+            $table->string('subscriptionMethod')->default('quickpay');
+            $table->string('paymentMethod')->default('quickpay');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('payment_method_accesses', function (Blueprint $table) {
+           $table->dropColumn('shopperId');
+           $table->dropColumn('subscriptionMethod');
+           $table->dropColumn('paymentMethod');
+        });
+    }
+};
