@@ -15,9 +15,9 @@ class ElavonShopSubscription
     protected function config()
     {
         $config = new ClientConfig();
-        $config->setMerchantAlias('xvjtx7x8pr2mv27bkm2h26tp3k4t');
-        $config->setPublicKey('pk_j7r8dfd3qyxm76d27tqxxvhj4mc4');
-        $config->setSecretKey('sk_4brwqdqky32tp3vgpycckq4b73db');
+        $config->setMerchantAlias(setting('payment.elavon_merchant_alias'));
+        $config->setPublicKey(setting('payment.elavon_public_key'));
+        $config->setSecretKey(setting('payment.elavon_public_key'));
 
         if (env('APP_ENV') == 'local') {
             $config->setSandboxMode();
@@ -179,7 +179,7 @@ class ElavonShopSubscription
     public function chargeViaCard($amount)
     {
         $response = $this->elavon->createSaleTransaction($this->getTransactionCreateReqBody($amount));
-        
+
         if ($response->isSuccess()) {
             return [
                 'status' => true,

@@ -31,9 +31,9 @@ class ApiElavonPayment
         $publicKey =  $shop->elavon_public_key;
         $secretKey =  $shop->elavon_secret_key;
         $this->keys = [
-            'mercahantAlias' => "xvjtx7x8pr2mv27bkm2h26tp3k4t",
-            'publicKey' =>  "pk_j7r8dfd3qyxm76d27tqxxvhj4mc4",
-            'secretKey' => "sk_4brwqdqky32tp3vgpycckq4b73db"
+            'mercahantAlias' => setting('payment.elavon_merchant_alias'),
+            'publicKey' =>  setting('payment.elavon_public_key'),
+            'secretKey' => setting('payment.elavon_public_key')
         ];
         $this->endpoint = 'https://uat.hpp.converge.eu.elavonaws.com';
         // if (env('APP_ENV') == 'local') {
